@@ -1,0 +1,31 @@
+version = 1
+
+# --- ドキュメント・設定・メタ ---
+[[annotations]]
+path = [
+  "README.md",
+  ".gitignore",
+  "docs/**",
+  ".github/**",
+  "**/.gitkeep",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 YourStand Inc."
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# --- OCPP標準まわり（解説のみ） ---
+# 注意: Open Charge Alliance が配布する OCPP スキーマ原本は OCA の利用条件に従う。
+#       ここで CC-BY-4.0 を宣言してよいのはユアスタンドが書いた解説・境界定義のみ。
+#       OCA スキーマを取り込む場合は別パス＋OCA条件で隔離すること（docs/governance.md）。
+[[annotations]]
+path = "samples/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 YourStand Inc."
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# --- シミュレーター基盤・ツール（実行コード） ---
+[[annotations]]
+path = ["simulator/**", "tools/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 YourStand Inc."
+SPDX-License-Identifier = "Apache-2.0"

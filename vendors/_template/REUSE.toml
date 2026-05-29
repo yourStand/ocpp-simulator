@@ -1,0 +1,22 @@
+version = 1
+
+# このファイルの位置（vendors/<vendor>/）からの相対パス。
+# <Vendor>様が参加した時点で、この1ファイルの書き換え + CODEOWNERS差し替えだけで
+# 「自社ディレクトリのライセンスを自分で決める」が成立する。
+
+# --- 仕様・拡張・状態遷移など（暫定リファレンス） ---
+[[annotations]]
+path = ["models/**", "README.md", "contact.md", "extensions/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 YourStand Inc. (provisional reference, pending <Vendor> decision)"
+SPDX-License-Identifier = "LicenseRef-Provisional-VendorReference"
+
+# --- サンプルログ = データ（コードライセンスは不適切） ---
+# 外部公開前に (1) 機微情報のサニタイズ (2) データ用ライセンス(CC-BY-4.0 / CDLA-Permissive-2.0)
+# への切り替え を必須とする。現状は暫定扱いで内部限定。
+[[annotations]]
+path = "models/**/sample-logs/**"
+precedence = "override"
+comment = "Operational data. Sanitize + assign a data license (CC-BY-4.0 or CDLA-Permissive-2.0) before any external release."
+SPDX-FileCopyrightText = "2026 YourStand Inc. (provisional reference, pending <Vendor> decision)"
+SPDX-License-Identifier = "LicenseRef-Provisional-VendorReference"

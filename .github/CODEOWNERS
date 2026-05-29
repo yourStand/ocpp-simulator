@@ -1,0 +1,22 @@
+# CODEOWNERS — ガバナンスモデルA（CPO主導ホスト）
+# 現状は全領域をユアスタンドが管理。
+# 将来ベンダーが参加したら、当該 vendors/<vendor>/ 行をそのベンダーのチームに差し替えるだけで
+# 「ライセンス宣言を含むそのディレクトリの変更承認」を委譲できる（= B/C移行の足場）。
+
+# 既定
+*                         @yourstand/engineering
+
+# 標準・サンプル・基盤（ユアスタンド管理で固定）
+/samples/                 @yourstand/engineering
+/simulator/               @yourstand/engineering
+/tools/                   @yourstand/engineering
+/docs/                    @yourstand/engineering
+/.github/                 @yourstand/engineering
+
+# ベンダー領域（委譲の単位）
+/vendors/yourstand/       @yourstand/engineering
+# 例) ベンダーが参加した時点で当該行を当該チームへ差し替える:
+# /vendors/<vendor>/      @<vendor>/maintainers
+
+# 新規ベンダー雛形
+/vendors/_template/       @yourstand/engineering

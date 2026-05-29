@@ -1,0 +1,22 @@
+{
+  "name": "ocpp-vendor-reference-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "充電器側スタブ + モックCSMS（OCPP 1.6-J）。CSMS接続・互換性回帰テスト用の最小基盤。",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "ocpp-csms": "./csms.js",
+    "ocpp-simulate": "./simulate.js"
+  },
+  "scripts": {
+    "csms": "node csms.js",
+    "simulate": "node simulate.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

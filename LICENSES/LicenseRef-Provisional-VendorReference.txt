@@ -1,0 +1,17 @@
+LicenseRef-Provisional-VendorReference
+
+暫定ベンダーリファレンスライセンス（社内限定 / 外部配布不可）
+
+本識別子が付与されたファイルは、ユアスタンド株式会社が当該充電器メーカーの
+機器挙動を理解するために著した「暫定的な」リファレンス資料である。
+
+1. 本資料は内部検証およびメーカーとの協議のためのものであり、
+   メーカーの正式なライセンス決定が下るまで外部へ配布してはならない。
+2. 該当メーカーが本リポジトリに参加した時点で、当該 vendors/<vendor>/ 配下の
+   ライセンスは原則として当該メーカーが決定するものに置き換える。
+3. サンプルログ等の実機由来データは、外部公開前にサニタイズおよび
+   データ用ライセンス（例: CC-BY-4.0, CDLA-Permissive-2.0）への切替を要する。
+
+This is a provisional, internal-use-only marker. Files under this identifier
+MUST NOT be distributed externally until the corresponding vendor has made a
+formal licensing decision, at which point this identifier is to be replaced.

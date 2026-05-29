@@ -1,0 +1,21 @@
+version = 1
+
+# このファイルの位置（vendors/yourstand/）からの相対パス。
+# YSC2 は YourStand 自社製のため、暫定マーカー(LicenseRef-Provisional-VendorReference)は使わず
+# YourStand がライセンスを直接決定する。
+
+# --- 仕様・電文例・状態遷移など（YourStand著のリファレンス） ---
+[[annotations]]
+path = ["models/**", "README.md", "extensions/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 YourStand Inc."
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# --- サンプルログ = データ ---
+# 実機由来ログを置く場合は、外部公開前に機微情報のサニタイズを行うこと。
+[[annotations]]
+path = "models/**/sample-logs/**"
+precedence = "override"
+comment = "Operational data. Sanitize before any external release."
+SPDX-FileCopyrightText = "2026 YourStand Inc."
+SPDX-License-Identifier = "CC-BY-4.0"
