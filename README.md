@@ -14,6 +14,50 @@ OCPP電文のオープン化・FWUP連動・マルチベンダー対応を目的
 CSMS（OCPP の中央システム＝サーバー）の接続・互換性回帰テストを
 ローカル / CI / クラウドで再現可能にすることは、このゴールの具体的な達成手段。
 
+## 使い方（クイックスタート）
+
+充電器シミュレーター（`simulate.js` = WSクライアント）と
+モックCSMS（`csms.js` = 一般的なOCPPサーバーのサンプル）の2つを使う。
+Node.js 20以上が必要。詳細は [`simulator/README.md`](simulator/README.md)。
+
+### セットアップ（初回のみ）
+
+```bash
+cd simulator
+npm install
+```
+
+### 1. モックCSMS（OCPPサーバー）を起動 — ターミナル1
+
+```bash
+cd simulator
+node csms.js --port 9000          # = npm run csms
+```
+
+`[CSMS] listening ws://0.0.0.0:9000 ...` が出れば待受中。`Ctrl+C` で停止。
+オプション: `--port <番号>` / `--host <host>`（既定 9000 / 0.0.0.0）。
+
+### 2. 充電器シミュレーターで電文送信 — ターミナル2
+
+`simulate.js` は **プロファイルに定義された電文だけ**を送る（電文は
+`vendors/<vendor>/.../messages/*.json` 由来）。3モードがある。
+
+```bash
+cd simulator
+
+# (a) batch（既定）: 定義済み電文を順に一通り送って終了
+node simulate.js --profile ysc2
+
+# (b) interactive: 接続を保ち、対話的にオンデマンド送信（番号/電文名を入力、quitで終了）
+node simulate.js --profile ysc2 --interactive
+
+# (c) send: 指定した電文を1つだけ送って終了
+node simulate.js --profile ysc2 --send StatusNotification
+```
+
+共通オプション: `--id <充電器ID>`（既定 CP-001） / `--url <CSMS URL>`（既定 ws://localhost:9000）。
+`node simulate.js --help` で一覧表示。現在のプロファイル: `ysc2`（YourStand C2盤）。
+
 ## ガバナンスモデル
 
 - **現在: モデルA（CPO主導ホスト）** — ユアスタンドが本リポジトリを単独運営。
